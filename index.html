@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        gap: 30px;
+        background-color: crimson;
+      "
+    >
+      <!-- First Form -->
+      <form
+        action="database.php"
+        method="post"
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background-color: rgb(173, 248, 74);
+          padding: 25px;
+          height: 200px;
+        "
+      >
+        <h2>Add User</h2>
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <button style="width: 50%; margin: 0 auto" type="submit">Submit</button>
+      </form>
+      <form
+        action="database.php"
+        method="patch"
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          background-color: rgb(187, 241, 117);
+          padding: 25px;
+          height: 200px;
+        "
+      >
+        <h2>Update user's data</h2>
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <button style="width: 50%; margin: 0 auto" type="submit">Submit</button>
+      </form>
+
+      <!-- 3rd Form -->
+      <form
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+          max-width: 200px;
+          background-color: rgb(241, 219, 117);
+          padding: 25px;
+          height: 200px;
+        "
+        action="database.php"
+        method="get"
+      >
+        <h2>find user</h2>
+        <div>
+          <label for="email2">Email:</label>
+          <input type="email" name="email2" id="email2" />
+        </div>
+        <button style="width: 50%; margin: 0 auto" type="submit">Submit</button>
+      </form>
+
+      <!-- // 4th Form -->
+      <form
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+          max-width: 200px;
+          background-color: rgb(241, 117, 117);
+          padding: 25px;
+          height: 200px;
+        "
+        action="database.php"
+        method="delete"
+      >
+        <h2>Delete user</h2>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <button style="width: 50%; margin: 0 auto" type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
