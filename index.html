@@ -41,9 +41,12 @@
         </div>
         <button style="width: 50%; margin: 0 auto" type="submit">Submit</button>
       </form>
+
+      <!-- 2nd Form -->
       <form
+        id="updateForm"
         action="database.php"
-        method="patch"
+        method="post"
         style="
           display: flex;
           flex-direction: column;
@@ -54,6 +57,7 @@
         "
       >
         <h2>Update user's data</h2>
+        <input type="hidden" name="updateForm" value="updateForm" />
         <div>
           <label for="name">Name:</label>
           <input type="text" name="name" id="name" />
@@ -80,7 +84,7 @@
         action="database.php"
         method="get"
       >
-        <h2>find user</h2>
+        <h2>Find user</h2>
         <div>
           <label for="email2">Email:</label>
           <input type="email" name="email2" id="email2" />
@@ -90,6 +94,7 @@
 
       <!-- // 4th Form -->
       <form
+        id="deleteForm"
         style="
           display: flex;
           flex-direction: column;
@@ -101,9 +106,10 @@
           height: 200px;
         "
         action="database.php"
-        method="delete"
+        method="post"
       >
         <h2>Delete user</h2>
+        <input type="hidden" name="deleteForm" value="deleteForm" />
         <div>
           <label for="email">Email:</label>
           <input type="email" name="email" id="email" />
@@ -111,5 +117,38 @@
         <button style="width: 50%; margin: 0 auto" type="submit">Submit</button>
       </form>
     </div>
+
+    <!-- <script>
+      // Handle the form submission with JavaScript to simulate PATCH and DELETE
+      function handleFormSubmission(form, method) {
+        form.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form from submitting the traditional way
+
+          const formData = new FormData(form);
+          const xhr = new XMLHttpRequest();
+          xhr.open("POST", form.action, true); // Send a POST request to the target file
+
+          // Simulate PATCH or DELETE method by overriding the POST method
+          xhr.setRequestHeader("X-HTTP-Method-Override", method); // Set custom header
+
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              if (xhr.status === 200) {
+                alert("Request was successful");
+                console.log(xhr.responseText); // Response from the server (if any)
+              } else {
+                alert("Error: " + xhr.status);
+              }
+            }
+          };
+
+          xhr.send(formData); // Send form data
+        });
+      }
+
+      // Attach event listeners for PATCH and DELETE forms
+      handleFormSubmission(document.getElementById("updateForm"), "PATCH");
+      handleFormSubmission(document.getElementById("deleteForm"), "DELETE");
+    </script> -->
   </body>
 </html>

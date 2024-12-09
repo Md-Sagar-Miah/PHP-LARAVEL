@@ -1,5 +1,13 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+    if($_POST['updateForm']=='updateForm'){
+        updateData();
+    }elseif($_POST['deleteForm']=='deleteForm'){
+        deleteData();
+    }else{
+
     $name = $_POST['name'];
     $email = $_POST['email'];
 
@@ -50,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $conn->close();
         }
     }
+}
 }
 
 if($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -110,9 +119,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 }
 
-if($_SERVER["REQUEST_METHOD"] == "PATCH"){
-    $name = $_PATCH['name'];
-    $email = $_PATCH['email'];
+function updateData(){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
 
     // Create a connection to the MySQL database
     $conn = new mysqli('localhost', 'root', '', 'users');
@@ -157,8 +166,8 @@ if($_SERVER["REQUEST_METHOD"] == "PATCH"){
     }
 }
 
-if($_SERVER("REQUEST_METHOD") == "DELETE"){
-    $email = $_DELETE['email'];
+function deleteData(){
+    $email = $_POST['email'];
 
     // Create a connection to the MySQL database
     $conn = new mysqli('localhost', 'root', '', 'users');
